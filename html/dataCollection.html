@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/dataCollection.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container-box">
+        <div class="header">
+			 <i class="glyphicon glyphicon-asterisk" style="margin-right: 10px;"></i>>&nbsp;&nbsp;<span>检测中心&nbsp;&nbsp;>&nbsp;&nbsp;数据收集</span>
+        </div>
+        <div class="container-item">
+            <div class="container-item-header">
+            	<div class="header-info">
+            		
+            	</div>
+            	<div class="header-date">
+            		
+            	</div>
+            </div>
+            <div class="data-list">
+				<div class="table1">
+					<table border="1" id="table1">
+						<tr>
+							<th>全选</th>
+							<th>序号</th>
+							<th>数据类型</th>
+							<th>上传时间</th>
+							<th>位置信息</th>
+							<th>数据操作</th>
+						</tr>
+					</table>
+					<script>
+						for(var i=1;i<10;i++){
+							if(i%2==0){
+								$("#table1").append($('<tr><td><div class="td-item1" style=""><span><input type="checkbox"></span></div></td><td><div class="td-item2"><span>' + i +'</span></div></td><td><div class="td-item3"><span>视频</span></div></td><td><div class="td-item4"><span>2018-7-26 19:31:56</span></div></td><td><div class="td-item5"><span>32N,130E</span></div></td><td><div class="td-item6"><a href="#"><button class="btn1">详情信息</button></a><a href="#"><button class="btn2">下载</button></a><a href="#"><button class="btn3">删除</button></a></div></td></tr>'));
+							}else{
+								$("#table1").append($('<tr><td><div class="td-item1" style=""><span><input type="checkbox"></span></div></td><td><div class="td-item2"><span>' + i +'</span></div></td><td><div class="td-item3"><span>图片</span></div></td><td><div class="td-item4"><span>2018-7-26 19:31:56</span></div></td><td><div class="td-item5"><span>32N,130E</span></div></td><td><div class="td-item6"><a href="#"><button class="btn1">详情信息</button></a><a href="#"><button class="btn2">下载</button></a><a href="#"><button class="btn3">删除</button></a></div></td></tr>'));
+							}
+						}
+					</script>
+				</div>
+				<div class="table2">
+					<table border="1" id="table2">
+						<tr>
+							<th>全选</th>
+							<th>序号</th>
+							<th>数据类型</th>
+							<th>上传时间</th>
+							<th>位置信息</th>
+							<th>数据操作</th>
+						</tr>
+					</table>
+					<script>
+						for(var i=10;i<15;i++){
+							if(i%2==0){
+								$("#table2").append($('<tr><td><div class="td-item1" style=""><span><input type="checkbox"></span></div></td><td><div class="td-item2"><span>' + i +'</span></div></td><td><div class="td-item3"><span>视频</span></div></td><td><div class="td-item4"><span>2018-7-26 19:31:56</span></div></td><td><div class="td-item5"><span>32N,130E</span></div></td><td><div class="td-item6"><a href="#"><button class="btn1">详情信息</button></a><a href="#"><button class="btn2">下载</button></a><a href="#"><button class="btn3">删除</button></a></div></td></tr>'));
+							}else{
+								$("#table2").append($('<tr><td><div class="td-item1" style=""><span><input type="checkbox"></span></div></td><td><div class="td-item2"><span>' + i +'</span></div></td><td><div class="td-item3"><span>图片</span></div></td><td><div class="td-item4"><span>2018-7-26 19:31:56</span></div></td><td><div class="td-item5"><span>32N,130E</span></div></td><td><div class="td-item6"><a href="#"><button class="btn1">详情信息</button></a><a href="#"><button class="btn2">下载</button></a><a href="#"><button class="btn3">删除</button></a></div></td></tr>'));
+							}
+						}
+					</script>
+				</div>
+            </div>
+            <div class="page">
+            	<span id="content">第<span>1</span>页&nbsp;&nbsp;共<span>2</span>页&nbsp;&nbsp;</span>
+            	<a href="#" onclick="homePage()">首页</a>&nbsp;&nbsp;
+            	<a href="#" onclick="clickChange()">下一页</a>&nbsp;&nbsp;
+            	<a href="#" onclick="clickChange()">最后一页</a>&nbsp;&nbsp;
+            	<select name="" id="select" onchange="change()">
+            		<option value="1" selected="true">1</option>
+            		<option value="2">2</option>
+            	</select>
+            </div>
+            <script>
+            	function clickChange(){
+            		$(".table1").css({
+            			display:'none'
+            		})
+            		$(".table2").css({
+            			display:'block'
+            		})
+            		$("#content").html('第<span>2</span>页&nbsp;&nbsp;共<span>2</span>页&nbsp;&nbsp;');
+            		$("#select").html('<option value="1">1</option><option value="2" selected="true">2</option>');
+            	}
+            	function homePage(){
+            		$(".table1").css({
+            			display:'block'
+            		})
+            		$(".table2").css({
+            			display:'none'
+            		})
+            		$("#content").html('第<span>1</span>页&nbsp;&nbsp;共<span>2</span>页&nbsp;&nbsp;');
+            		$("#select").html('<option value="1" selected="true">1</option><option value="2">2</option>');
+            	}
+            	function change(){
+            		var myselect = document.getElementById("select");
+            		var index = myselect.selectedIndex;
+            		if(index==0){
+            			myselect.options[index].setAttribute("selected", "true");
+            			$(".table1").css({
+	            			display:'block'
+	            		})
+	            		$(".table2").css({
+	            			display:'none'
+	            		})
+	            		$("#content").html('第<span>1</span>页&nbsp;&nbsp;共<span>2</span>页&nbsp;&nbsp;')
+            		}else if (index == 1) {}{
+            			myselect.options[index].setAttribute("selected", "true")
+            			$(".table1").css({
+	            			display:'none'
+	            		})
+	            		$(".table2").css({
+	            			display:'block'
+	            		})
+	            		$("#content").html('第<span>2</span>页&nbsp;&nbsp;共<span>2</span>页&nbsp;&nbsp;')
+            		}
+            		console.log(index);
+            	}
+            </script>
+        </div>
+    </div>
+</body>
+</html>

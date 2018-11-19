@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/flightWarning.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/flightTemperature.js"></script>
+</head>
+<body>
+	<div class="container-box">
+		<div class="altitude-chart" id="main">
+			
+		</div>
+		<script type="text/javascript">
+	        // 基于准备好的dom，初始化echarts实例
+	        var myChart = echarts.init(document.getElementById('main'));
+	        // 指定图表的配置项和数据
+			var seriesLabel = {
+			    normal: {
+			        show: true,
+			        textBorderColor: '#333',
+			        textBorderWidth: 2
+			    }
+			}
+
+			option = {
+			    title: {
+			        text: '报警检测'
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        axisPointer: {
+			            type: 'shadow'
+			        }
+			    },
+			    legend: {
+			        data: ['电量', '液位', '机身']
+			    },
+			    grid: {
+			        left: 100
+			    },
+			    xAxis: {
+			        type: 'value',
+			        name: '报警次数',
+			        axisLabel: {
+			            formatter: '{value}'
+			        }
+			    },
+			    yAxis: {
+			        type: 'category',
+			        inverse: true,
+			        data: ['第一次', '第二次', '第三次'],
+			        axisLabel: {
+			            formatter: function (value) {
+			                return '{' + value + '}';
+			            },
+			            margin: 20,
+			            rich: {
+			                value: {
+			                    lineHeight: 30,
+			                    align: 'center'
+			                },
+			                Sunny: {
+			                    height: 40,
+			                    align: 'center'
+			                },
+			                Cloudy: {
+			                    height: 40,
+			                    align: 'center'
+			                },
+			                Showers: {
+			                    height: 40,
+			                    align: 'center'
+			                }
+			            }
+			        }
+			    },
+			    series: [
+			        {
+			            name: '电量',
+			            type: 'bar',
+			            data: [4, 6, 3],
+			            label: seriesLabel,
+			            markPoint: {
+			                symbolSize: 1,
+			                symbolOffset: [0, '50%'],
+			                label: {
+			                   normal: {
+			                        formatter: '{a|{a}\n}{b|{b} }{c|{c}}',
+			                        backgroundColor: 'rgb(242,242,242)',
+			                        borderColor: '#aaa',
+			                        borderWidth: 1,
+			                        borderRadius: 4,
+			                        padding: [4, 10],
+			                        lineHeight: 26,
+			                        // shadowBlur: 5,
+			                        // shadowColor: '#000',
+			                        // shadowOffsetX: 0,
+			                        // shadowOffsetY: 1,
+			                        position: 'right',
+			                        distance: 20,
+			                        rich: {
+			                            a: {
+			                                align: 'center',
+			                                color: '#fff',
+			                                fontSize: 18,
+			                                textShadowBlur: 2,
+			                                textShadowColor: '#000',
+			                                textShadowOffsetX: 0,
+			                                textShadowOffsetY: 1,
+			                                textBorderColor: '#333',
+			                                textBorderWidth: 2
+			                            },
+			                            b: {
+			                                 color: '#333'
+			                            },
+			                            c: {
+			                                color: '#ff8811',
+			                                textBorderColor: '#000',
+			                                textBorderWidth: 1,
+			                                fontSize: 22
+			                            }
+			                        }
+			                   }
+			                }
+			            }
+			        },
+			        {
+			            name: '液位',
+			            type: 'bar',
+			            label: seriesLabel,
+			            data: [3, 4, 5]
+			        },
+			        {
+			            name: '机身',
+			            type: 'bar',
+			            label: seriesLabel,
+			            data: [4, 2, 2]
+			        }
+			    ]
+			};
+	        // 使用刚指定的配置项和数据显示图表。
+	        myChart.setOption(option);
+	    </script>
+		<div class="altitude-intro">
+			<span>运行环境报警时间统计</span>
+		</div>
+	</div>
+</body>
+</html>

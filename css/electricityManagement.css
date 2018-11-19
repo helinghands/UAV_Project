@@ -1,0 +1,302 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+.container-box{
+	width: 1000px;
+	height: 800px;
+	background-color: #F3F3F4;
+	position: relative;
+}
+.container-item1{
+	width: 1000px;
+	height: 45px;
+	border-bottom: 1px solid lightgray;
+	padding-left: 25px;
+	line-height: 45px;
+	color: #888;
+}
+.container-item2{
+	width: 940px;
+	height: 280px;
+	margin-top: 20px;
+	margin-left: 30px;
+	background-color: #fff;
+}
+.container-item2-title{
+	height: 30px;
+	width: 940px;
+	background-color: #DEDEDF;
+	line-height: 30px;
+	padding-left: 25px;
+	color: #888;
+}
+.container-item2-content{
+	width: 940px;
+	height: 250px;
+}
+.icon1{
+	width: 20px;
+	margin-right: 20px;
+}
+.container-item2-content>div{
+	float: left;
+}
+.progress-bar-item{
+	width: 470px;
+	height: 250px;
+}
+.clock-dial{
+	width: 470px;
+	height: 250px;
+}
+.progress-bar-item li{
+	width: 100%;
+	height: 50px;
+}
+.progress-bar-item li>div{
+	float: left;
+}
+.electric-info-title{
+	width: 150px;
+	height: 50px;
+}
+.nav-btn{
+	width: 130px;
+	height: 30px;
+	margin-top: 10px;
+	line-height: 30px;
+	margin-left: 10px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background-color: #10C5E5;
+	color: #fff;
+	text-indent: 1.5em;
+}
+.electric-info-data{
+	width: 280px;
+	margin-left: 20px;
+}
+.data-btn{
+	height: 30px;
+	width: 280px;
+	line-height: 30px;
+	margin-top: 10px;
+}
+.progress-bar1,.progress-data{
+	float: left;
+}
+.progress-data{
+	width: 60px;
+	margin-left: 10px;
+	color: #888;
+}
+.progress-bar1{
+	height: 10px;
+	width: 0;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: #10C5E5;
+	position:relative;
+	animation:bar1 3s;
+	-moz-animation:bar1 3s; Firefox
+	-webkit-animation:bar1 3s; /* Safari and Chrome */
+	-o-animation:bar1 3s; /* Opera */
+	animation-fill-mode: both;
+}
+@keyframes bar1{
+	0%   {width: 0;}
+	100% {width: 200px;}
+}
+.progress-bar2,.progress-data{
+	float: left;
+}
+.progress-bar2{
+	height: 10px;
+	width: 0;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: #10C5E5;
+	position:relative;
+	animation:bar2 3s;
+	-moz-animation:bar2 3s; Firefox
+	-webkit-animation:bar2 3s; /* Safari and Chrome */
+	-o-animation:bar2 3s; /* Opera */
+	animation-fill-mode: both;
+}
+@keyframes bar2{
+	0%   {width: 0;}
+	100% {width: 166px;}
+}
+.progress-bar3,.progress-data{
+	float: left;
+}
+.progress-bar3{
+	height: 10px;
+	width: 0;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: #10C5E5;
+	position:relative;
+	animation:bar3 3s;
+	-moz-animation:bar3 3s; Firefox
+	-webkit-animation:bar3 3s; /* Safari and Chrome */
+	-o-animation:bar3 3s; /* Opera */
+	animation-fill-mode: both;
+}
+@keyframes bar3{
+	0%   {width: 0;}
+	100% {width: 100px;}
+}
+.progress-bar4,.progress-data{
+	float: left;
+}
+.progress-bar4{
+	height: 10px;
+	width: 0;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: #10C5E5;
+	position:relative;
+	animation:bar4 3s;
+	-moz-animation:bar4 3s; Firefox
+	-webkit-animation:bar4 3s; /* Safari and Chrome */
+	-o-animation:bar4 3s; /* Opera */
+	animation-fill-mode: both;
+}
+@keyframes bar4{
+	0%   {width: 0;}
+	100% {width: 166px;}
+}
+.progress-bar5,.progress-data{
+	float: left;
+}
+.progress-bar5{
+	height: 10px;
+	width: 0;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: #10C5E5;
+	position:relative;
+	animation:bar5 3s;
+	-moz-animation:bar5 3s; Firefox
+	-webkit-animation:bar5 3s; /* Safari and Chrome */
+	-o-animation:bar5 3s; /* Opera */
+	animation-fill-mode: both;
+}
+@keyframes bar5{
+	0%   {width: 0;}
+	100% {width: 166px;}
+}
+.clock-dial-item1{
+	width: 220px;
+	height: 220px;
+	margin-left: 125px;
+	margin-top: 15px;
+}
+.container-item3{
+	width: 940px;
+	height: 330px;
+	margin-top: 20px;
+	margin-left: 30px;
+	background-color: #fff;
+}
+.container-item3-title{
+	height: 30px;
+	width: 940px;
+	background-color: #DEDEDF;
+	line-height: 30px;
+	padding-left: 25px;
+	color: #888;
+}
+.container-item3-content{
+	width: 940px;
+	height: 300px;
+}
+.container-item3-content li{
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	border-bottom: 1px dashed #888;
+}
+.container-item3-content li>div{
+	float: left;
+}
+.battery-type{
+	width: 150px;
+	height: 60px;
+	margin-left: 20px;
+	text-align: center;
+	color: #888;
+}
+.battery-state{
+	width: 180px;
+	height: 60px;
+	color: #fff;
+}
+.battery-display{
+	width: 570px;
+	height: 60px;
+	padding-left: 25px;
+}
+.text{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 15px;
+}
+.icon2{
+	margin-right: 10px;
+}
+.battery-btn{
+	width: 100px;
+	height: 30px;
+	margin-top: 15px;
+	background-color: green;
+	margin-left: 40px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 3px;
+}
+.nav-bar1{
+	width: 520px;
+	height: 14px;
+	border-radius: 7px;
+	margin-top: 23px;
+	animation: nav-bar1 1s 0s infinite;
+}
+@keyframes nav-bar1{
+	0%{
+		background: linear-gradient(-45deg, green 9%,#E9E9E9 10%,#E9E9E9 19%,green 20%,green 29%,#E9E9E9 30%,#E9E9E9 39%,
+		green 40%,green 49%,#E9E9E9 50%,#E9E9E9 59%,green 60%,green 69%,#E9E9E9 70%,#E9E9E9 79%,green 80%,green 89%,
+		#E9E9E9 90%,#E9E9E9 99%,green 100%);
+	}
+	20%{
+		background: linear-gradient(-45deg,#E9E9E9 9%,green 10%,green 19%,#E9E9E9 20%,#E9E9E9 29%,green 30%,green 39%,
+		#E9E9E9 40%,#E9E9E9 49%,green 50%,green 59%,#E9E9E9 60%,#E9E9E9 69%,green 70%,green 79%,#E9E9E9 80%,#E9E9E9 89%,
+		green 90%,green 99%,#E9E9E9 100%);
+	}
+	40%{
+		background: linear-gradient(-45deg, green 9%,#E9E9E9 10%,#E9E9E9 19%,green 20%,green 29%,#E9E9E9 30%,#E9E9E9 39%,
+		green 40%,green 49%,#E9E9E9 50%,#E9E9E9 59%,green 60%,green 69%,#E9E9E9 70%,#E9E9E9 79%,green 80%,green 89%,
+		#E9E9E9 90%,#E9E9E9 99%,green 100%);
+	}
+	60%{
+		background: linear-gradient(-45deg,#E9E9E9 9%,green 10%,green 19%,#E9E9E9 20%,#E9E9E9 29%,green 30%,green 39%,
+		#E9E9E9 40%,#E9E9E9 49%,green 50%,green 59%,#E9E9E9 60%,#E9E9E9 69%,green 70%,green 79%,#E9E9E9 80%,#E9E9E9 89%,
+		green 90%,green 99%,#E9E9E9 100%);
+	}
+	80%{
+		background: linear-gradient(-45deg, green 9%,#E9E9E9 10%,#E9E9E9 19%,green 20%,green 29%,#E9E9E9 30%,#E9E9E9 39%,
+		green 40%,green 49%,#E9E9E9 50%,#E9E9E9 59%,green 60%,green 69%,#E9E9E9 70%,#E9E9E9 79%,green 80%,green 89%,
+		#E9E9E9 90%,#E9E9E9 99%,green 100%);
+	}
+	100%{
+		background: linear-gradient(-45deg,#E9E9E9 9%,green 10%,green 19%,#E9E9E9 20%,#E9E9E9 29%,green 30%,green 39%,
+		#E9E9E9 40%,#E9E9E9 49%,green 50%,green 59%,#E9E9E9 60%,#E9E9E9 69%,green 70%,green 79%,#E9E9E9 80%,#E9E9E9 89%,
+		green 90%,green 99%,#E9E9E9 100%);
+	}
+}

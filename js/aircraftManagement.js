@@ -1,0 +1,12 @@
+$(function(){
+	$("#container-item1").css({
+		marginLeft:($(window).width()-1200)/2
+	})
+	$("#container-item2").css({
+		marginLeft:($(window).width()-1200)/2
+	})
+	$("#container-item3").css({
+		marginLeft:($(window).width()-1200)/2,
+		marginTop:840
+	})
+})

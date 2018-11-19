@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+.container-box{
+	width: 900px;
+	height: 370px;
+	margin: auto;
+	background-color: #F6F6F6;
+}
+.altitude-chart{
+	width: 900px;
+	height: 340px;
+	background-color: rgb(51, 187, 189);
+}
+.altitude-intro{
+	width: 900px;
+	height: 30px;
+	padding-left: 25px;
+	line-height: 30px;
+	color: #fff;
+	background-color: rgb(35, 135, 135);
+}

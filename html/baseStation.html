@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/baseStation.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/baseStation.js"></script>
+</head>
+<body>
+    <div class="container-box">
+        <div class="header">
+            <i class="glyphicon glyphicon-asterisk" style="margin-right: 10px;"></i>>&nbsp;&nbsp;状态管理&nbsp;&nbsp;>&nbsp;&nbsp;基站管理
+        </div>
+        <div class="container-item">
+            <div class="container-item-header">
+                <div>
+                    <i class="fa fa-building" aria-hidden="true" style="margin-right: 10px;"></i><span>基站</span>
+                </div>
+            </div>
+            <div class="base-station-battery">
+                <div class="battery-header">
+                    <i class="fa fa-battery-three-quarters icon1" aria-hidden="true"></i><span>电池</span>
+                </div>
+                <div class="battery-content">
+                    <div class="battery-animation">
+                        <nav class="nav-battery1">
+                            <div class="battery-background" id="battery" style="background-image: url('../images/timg.png')"></div>
+                            <label><span id="surplus">60</span>%</label>
+                        </nav>
+                        <script>
+                            var battery = document.getElementById("battery");
+                            var obj = {
+                                surplus:{
+                                    data:60
+                                }
+                            };
+                            var sBattery;
+                            var head = document.getElementsByTagName('head')[0];
+                            var style = document.createElement('style');
+                            head.appendChild(style);
+                            $("#battery").css({
+                                width: 180
+                            });
+                            var time = setInterval(function(){ 
+                                style.innerHTML = "@keyframe bar1{0%{width:" + sBattery*3 +"px;}100%{width:" + (sBattery+1)*3 + "px;}}";
+                                sBattery = obj.surplus.data;
+                                obj.surplus.data = obj.surplus.data + 1;
+                                $("#surplus").text(sBattery);
+                                $("#battery").css({
+                                    width: sBattery*3,
+                                    animation:"1s bar1 linear"
+                                });
+                                if(sBattery>=100){
+                                    clearInterval(time);
+                                }
+                            },2000);
+                        </script>
+                        <nav class="nav-battery2"></nav>
+                    </div>
+                    <div class="battery-chart">
+                        <div id="chart1" style="width: 430px;height: 250px;background-color: #fff;"></div>
+                        <script>
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart = echarts.init(document.getElementById('chart1'));
+                            // 指定图表的配置项和数据
+                            var option = {
+                                title: {
+                                    text: '电量(%)'
+                                },
+                                tooltip: {
+                                    trigger: 'axis'
+                                },
+                                xAxis: {
+                                    type: 'category',
+                                    boundaryGap: false,
+                                    data: []
+                                },
+                                yAxis: {
+                                    type: 'value'
+                                },
+                                series: [{
+                                    data: [60,60,60,60,60],
+                                    type: 'line',
+                                    smooth: true,
+                                    itemStyle: {
+                                        normal: {
+                                            color: "lightgreen",
+                                            lineStyle: {
+                                                color: "lightgreen"
+                                            }
+                                        }
+                                    }
+                                }]
+                            };
+                            var i = 0.5,x = 20;
+                            // 为其赋值
+                            for(var j=0;j<5;j++){
+                                var nowDate = new Date();
+                                option.xAxis.data[j] = nowDate.getHours() + ":" + nowDate.getMinutes() + ":" + nowDate.getSeconds();
+                            }
+                            // 判断时分秒是否小于10
+                            function judge(item1,item2,item3){
+                                if(item1<10){
+                                    item1 = "0" + item1;
+                                }
+                                if(item2<10){
+                                    item2 = "0" + item2;
+                                }
+                                if(item3<10){
+                                    item1 = "0" + item3;
+                                }
+                                return item1+":"+item2+":"+item3;
+                            }
+                            var batteryChart = setInterval(function(){
+                                // 获取当前时间
+                                var date = new Date();
+                                var hour = date.getHours();
+                                var minute = date.getMinutes();
+                                var second = date.getSeconds();
+                                var time = judge(hour,minute,second);
+                                // 删除data第一个元素
+                                option.xAxis.data.shift();
+                                option.series[0].data.shift();
+                                // 填充最后一个元素
+                                option.xAxis.data.push(time);
+                                option.series[0].data.push(60 + i);
+                                myChart.setOption(option);
+                                i = i + 0.5;
+                                x++;
+                                if(x>=100){
+                                    clearInterval(batteryChart);
+                                }
+                            },1000);
+                            // 使用刚指定的配置项和数据显示图表。
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="base-station-level">
+                <div class="level-header">
+                    <i class="fa fa-battery-three-quarters icon1" aria-hidden="true"></i><span>液位</span>
+                </div>
+                <div class="level-content">
+                    <div class="level-animation">
+                        <canvas class="nav-level" id="level"></canvas>
+                        <input type="range" id="r" min="0" max="100" step="1" style="display: none;">
+                        <script>
+                            var canvas = document.getElementById('level');
+                            var ctx = canvas.getContext('2d');
+                            var range = document.getElementById('r');
+                            //range控件信息
+                            var rangeValue = range.value;
+                            var nowRange = 0;   //用于做一个临时的range
+                            //画布属性
+                            var mW = canvas.width = 250;
+                            var mH = canvas.height = 250;
+                            var lineWidth = 2;
+                            //圆属性
+                            var r = mH / 2; //圆心
+                            var cR = r - 16 * lineWidth; //圆半径
+                            //Sin 曲线属性
+                            var sX = 0;
+                            var sY = mH / 2;
+                            var axisLength = mW; //轴长
+                            var waveWidth = 0.015 ;   //波浪宽度,数越小越宽    
+                            var waveHeight = 6; //波浪高度,数越大越高
+                            var speed = 0.09; //波浪速度，数越大速度越快
+                            var xOffset = 0; //波浪x偏移量
+                            ctx.lineWidth = lineWidth;
+                            //画圈函数
+                            var IsdrawCircled = false;
+                            var drawCircle = function(){
+                                ctx.beginPath();
+                                ctx.strokeStyle = '#1080d0';
+                                ctx.arc(r, r, cR+5, 0, 2 * Math.PI);
+                                ctx.stroke();
+                                ctx.beginPath();
+                                ctx.arc(r, r, cR, 0, 2 * Math.PI);
+                                ctx.clip();
+                            }
+                            //画sin 曲线函数
+                            var drawSin = function(xOffset){
+                                ctx.save();
+                                var points=[];  //用于存放绘制Sin曲线的点
+                                ctx.beginPath();
+                                //在整个轴长上取点
+                                for(var x = sX; x < sX + axisLength; x += 20 / axisLength){
+                                    //此处坐标(x,y)的取点，依靠公式 “振幅高*sin(x*振幅宽 + 振幅偏移量)”
+                                    var y = -Math.sin((sX + x) * waveWidth + xOffset);
+                                    var dY = mH * (1 - nowRange / 100 );
+                                    points.push([x, dY + y * waveHeight]);
+                                    ctx.lineTo(x, dY + y * waveHeight);     
+                                }
+                                //封闭路径
+                                ctx.lineTo(axisLength, mH);
+                                ctx.lineTo(sX, mH);
+                                ctx.lineTo(points[0][0],points[0][1]);
+                                ctx.fillStyle = '#1c86d1';
+                                ctx.fill();
+                                ctx.restore();
+                            };
+                            //写百分比文本函数
+                            var drawText = function(){
+                                ctx.save();
+                                var size = 0.4*cR;
+                                ctx.font = size + 'px Microsoft Yahei';
+                                ctx.textAlign = 'center';
+                                ctx.fillStyle = "rgba(06, 85, 128, 0.8)";
+                                ctx.fillText(~~nowRange + '%', r, r + size / 2);
+                                ctx.restore();
+                            };
+                            var render = function(){
+                                ctx.clearRect(0, 0, mW, mH);
+                                rangeValue = range.value;
+                                if(IsdrawCircled == false){
+                                    drawCircle();   
+                                }
+                                if(nowRange <= rangeValue){
+                                    var tmp = 1;
+                                    nowRange += tmp;
+                                }
+                                if(nowRange > rangeValue){
+                                    var tmp = 1;
+                                    nowRange -= tmp;
+                                }
+                                drawSin(xOffset);
+                                drawText(); 
+
+                                xOffset += speed;
+                                requestAnimationFrame(render);
+                            }
+                            render();       
+                        </script>
+                    </div>
+                    <div class="level-chart">
+                        <div id="levelChart" style="width: 430px;height: 250px;background-color: #fff;"></div>
+                        <script>
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart1 = echarts.init(document.getElementById('levelChart'));
+                            // 指定图表的配置项和数据
+                            option1 = {
+                                xAxis: {
+                                    type: 'category',
+                                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                                },
+                                yAxis: {
+                                    type: 'value'
+                                },
+                                series: [{
+                                    data: [50, 50, 50, 50, 50, 50, 50,100],
+                                    type: 'line',
+                                    itemStyle: {
+                                        normal: {
+                                            color: "#2ec7c9",
+                                            lineStyle: {
+                                                color: "#2ec7c9"
+                                            }
+                                        }
+                                    }
+                                }]
+                            };
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart1.setOption(option1);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

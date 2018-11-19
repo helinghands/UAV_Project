@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/flightAltitude.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/flightAltitude.js"></script>
+    <script src="../js/echarts.js"></script>
+</head>
+<body>
+	<div class="container-box">
+		<div class="altitude-chart" id="main">
+			
+		</div>
+		<script type="text/javascript">
+	        // 基于准备好的dom，初始化echarts实例
+	        var myChart = echarts.init(document.getElementById('main'));
+	        // 指定图表的配置项和数据
+	        var option = {
+	            title: {
+	                text: '飞机飞行最高高度'
+	            },
+	            tooltip: {},
+	            legend: {
+	                data:['高度/m']
+	            },
+	            xAxis: {
+	                data: ["第一次","第二次","第三次","第四次","第五次","第六次"]
+	            },
+	            yAxis: {},
+	            series: [{
+	                name: '高度/m',
+	                type: 'bar',
+	                data: [5, 20, 36, 10, 10, 20]
+	            }]
+	        };
+	        // 使用刚指定的配置项和数据显示图表。
+	        myChart.setOption(option);
+	    </script>
+		<div class="altitude-intro">
+			<span>运行环境高度统计</span>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/electricityManagement.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/electricityManagement.js"></script>
+</head>
+<body>
+	<div class="container-box">
+        <div class="container-item1">
+            <i class="glyphicon glyphicon-asterisk" style="margin-right: 10px;"></i>>&nbsp;&nbsp;<span class="span1">状态管理&nbsp;&nbsp;>&nbsp;&nbsp;飞机电量管理</span>
+        </div>
+		<div class="container-item2">
+            <div class="container-item2-title">
+                <i class="fa fa-battery-full icon1" aria-hidden="true"></i><span style="">电量状态管理</span>
+            </div>
+            <div class="container-item2-content">
+                <div class="progress-bar-item">
+                   <ul>
+                       <li>
+                           <div class="electric-info-title">
+                                <nav class="nav-btn">电池容量</nav>
+                            </div>
+                            <div class="electric-info-data">
+                                <nav class="data-btn">
+                                    <nav class="progress-bar1"></nav>
+                                    <nav class="progress-data">
+                                        3000mA
+                                    </nav>
+                                </nav>
+                            </div>
+                       </li>
+                       <li>
+                           <div class="electric-info-title">
+                                <nav class="nav-btn">电量剩余</nav>
+                            </div>
+                            <div class="electric-info-data">
+                                <nav class="data-btn">
+                                    <nav class="progress-bar2"></nav>
+                                    <nav class="progress-data">
+                                        83%
+                                    </nav>
+                                </nav>
+                            </div>
+                       </li>
+                       <li>
+                           <div class="electric-info-title">
+                                <nav class="nav-btn">消耗速率</nav>
+                            </div>
+                            <div class="electric-info-data">
+                                <nav class="data-btn">
+                                    <nav class="progress-bar3"></nav>
+                                    <nav class="progress-data">
+                                        300mA/h
+                                    </nav>
+                                </nav>
+                            </div>
+                       </li>
+                       <li>
+                           <div class="electric-info-title">
+                                <nav class="nav-btn">剩余使用时间</nav>
+                            </div>
+                            <div class="electric-info-data">
+                                <nav class="data-btn">
+                                    <nav class="progress-bar4"></nav>
+                                    <nav class="progress-data">
+                                        12.04h
+                                    </nav>
+                                </nav>
+                            </div>
+                       </li>
+                       <li>
+                           <div class="electric-info-title">
+                                <nav class="nav-btn">充电状态</nav>
+                            </div>
+                            <div class="electric-info-data">
+                                <nav class="data-btn">
+                                    <nav class="progress-bar5"></nav>
+                                    <nav class="progress-data">
+                                        未充电
+                                    </nav>
+                                </nav>
+                            </div>
+                       </li>
+                   </ul>
+                </div>
+                <div class="clock-dial">
+                    <div class="clock-dial-item1">
+                        <canvas id="clockDial" width="220" height="220"></canvas>
+                        <script>
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart = echarts.init(document.getElementById('clockDial'));
+                            // 指定图表的配置项和数据
+                            var option = {
+                                tooltip : {
+                                    formatter: "{a} <br/>{b} : {c}%"
+                                },
+                                series: [
+                                    {
+                                        name: '业务指标',
+                                        type: 'gauge',
+                                        detail: {formatter:'{value}%'},
+                                        data: [{value: 83, name: '剩余电量'}]
+                                    }
+                                ]
+                            };
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart.setOption(option);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-item3">
+            <div class="container-item3-title">
+                <i class="fa fa-plug icon1" aria-hidden="true"></i><span>电池数据管理</span>
+            </div>
+            <div class="container-item3-content">
+                <ul>
+                    <li>
+                        <div class="battery-type">
+                            <div class="text">
+                                <i class="fa fa-battery-full icon2" aria-hidden="true"></i><span style="">一号电池</span>
+                            </div>
+                        </div>
+                        <div class="battery-state">
+                            <div class="battery-btn">
+                                <span>运行中</span>
+                            </div>
+                        </div>
+                        <div class="battery-display">
+                            <nav class="nav-bar1">
+                                
+                            </nav>
+                        </div>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+	</div>
+</body>
+</html>

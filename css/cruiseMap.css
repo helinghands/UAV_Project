@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li{
+	list-style: none;
+}
+.container-box {
+    width: 1000px;
+    height: 1730px;
+    background-color: #F3F3F4;
+    margin: auto;
+}
+
+.header {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #888;
+    border-bottom: 1px solid lightgray;
+    padding-left: 25px;
+}
+.header>span{
+    color: #fff;
+}
+.container-item {
+    width: 940px;
+    height: 1650px;
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: #fff;
+}
+
+.container-item-header {
+    width: 940px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dashed lightgray;
+}
+.container-item-header>div{
+    width: 910px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 30px;
+    color: #888;
+}
+.route-planning{
+	width: 900px;
+	height: 420px;
+	margin-left: 20px;
+	margin-top: 20px;
+	background-color: #F3F3F4;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.route-planning-header{
+	width: 900px;
+	height: 30px;
+	background-color: #CCCBCB;
+	padding-left: 25px;
+	line-height: 30px;
+	color: #888;
+}
+.route-planning-map{
+	width: 900px;
+	height: 350px;
+	background-color: red;
+}
+.route-planning-btn{
+	width: 900px;
+	height: 40px;
+}
+.route-data-show{
+	width: 900px;
+	height: 300px;
+	margin-top: 20px;
+	margin-left: 20px;
+	background-color: #F3F3F4;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.route-data-show-header{
+	width: 900px;
+	height: 30px;
+	background-color: #CCCBCB;
+	padding-left: 25px;
+	line-height: 30px;
+	color: #888;
+}
+.video-show{
+	width: 900px;
+	height: 500px;
+	margin-top: 20px;
+	margin-left: 20px;
+	background-color: #F3F3F4;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.video-show-header{
+	width: 900px;
+	height: 30px;
+	background-color: #CCCBCB;
+	padding-left: 25px;
+	line-height: 30px;
+	color: #888;
+}
+.route-data-content-item1{
+	width: 900px;
+	height: 230px;
+	overflow: hidden;
+}
+.route-data-content-item2{
+	width: 800px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 50px;
+	text-align: right;
+	padding-right: 20px;
+}
+.route-data-content-item2 div{
+	width: 100px;
+}
+.route-data-content-item2>a:link,
+.route-data-content-item2>a:visited{
+	color: #14E4E6;
+}
+table{
+	width: 800px;
+	margin-left: 50px;
+	margin-top: 10px;
+}
+th,td{
+	border: 1px solid lightgray;
+	text-align: center;
+}
+.item1{
+	width: 100px;
+	height: 30px;
+	color: #888;
+	line-height: 30px;
+}
+.item2{
+	width: 250px;
+	height: 30px;
+	color: #888;
+	line-height: 30px;
+}
+.item3{
+	width: 200px;
+	height: 30px;
+	color: #888;
+	line-height: 30px;
+}
+.item4{
+	width: 200px;
+	height: 30px;
+	color: #888;
+	line-height: 30px;
+}
+th{
+	text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+.item{
+	color: black;
+}
+.route-planning-btn button{
+	height: 30px;
+	background-color: blue;
+	border: none;
+	outline: none;
+	color: #fff;
+	margin-top: 5px;
+	border-radius: 5px;
+}
+.btn-item1{
+	width: 100px;
+	margin-left: 175px;
+}
+.btn-item2{
+	width: 170px;
+	margin-left: 50px;
+}
+.btn-item3{
+	width: 170px;
+	margin-left: 50px;
+}
+.video-show-content{
+	width: 800px;
+	height: 450px;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+video{
+	width: 800px;
+	height: 450px;
+}
+.image-show{
+	width: 900px;
+	height: 300px;
+	background-color: #F3F3F4;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+.image-show-header{
+	width: 900px;
+	height: 30px;
+	background-color: #CCCBCB;
+	padding-left: 25px;
+	line-height: 30px;
+	color: #888;
+}
+.image-show-content{
+	width: 900px;
+	height: 270px;
+	background-color: red;
+}
+.image-show-content img{
+	width: 100%;
+	height: 100%;
+}
+h1 {
+  font-family: Lobster;
+  font-weight: normal;
+  margin: 0;
+}
+#navigation{
+	width: 900px;
+	height: 40px;
+	text-align: center;
+}
+#navigation a {
+  	display: inline-block;
+  	line-height: 2.8em;
+  	margin-right: 1em;
+  	width: 40px;
+  	height: 40px;
+  	background: rgba(0,0,0,0.1);
+  	color: #fff;
+  	border-radius: 40px;
+  	-webkit-transition: .3s ease-in;
+    -moz-transition: .3s ease-in;
+    -ms-transition: .3s ease-in;
+    -o-transition: .3s ease-in;
+    transition: .3s ease-in;
+    text-align: center;
+}
+#navigation a.selected, #navigation a:hover {
+  background: rgba(0,0,0,.3);
+  text-decoration: none;
+}
+#portfolio-item {
+  display: none;
+}
+#portfolio {
+  margin: 10px 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+#portfolio img{
+	width: 100%;
+	height: 100%;
+}
+#portfolio 
+#portfolio div {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 14px;
+  width: 150px;
+  height: 170px;
+  box-shadow: 0px 0px 25px rgba(0,0,0,.3);
+}
+#portfolio div span {
+  text-align: left;
+  position: absolute;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  width: 90px;
+  padding: 5px 15px 7px;
+  z-index: 1;
+  left: -10px;
+  bottom: 10px;
+}
+.animated {
+  -webkit-transition: .9s ease-out;
+  -moz-transition: .9s ease-out;
+  -ms-transition: .9s ease-out;
+  -o-transition: .9s ease-out;
+  transition: .9s ease-out;
+}
+
+.flipped-horizontal-right {
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+
+.flipped-horizontal-left {
+  -webkit-transform: rotateY(-360deg);
+  -moz-transform: rotateY(-360deg);
+  -ms-transform: rotateY(-360deg);
+  -o-transform: rotateY(-360deg);
+  transform: rotateY(-360deg);
+}
+
+.flipped-vertical-top {
+  -webkit-transform: rotateX(360deg);
+  -moz-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  -o-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
+.flipped-vertical-bottom {
+  -webkit-transform: rotateX(-360deg);
+  -moz-transform: rotateX(-360deg);
+  -ms-transform: rotateX(-360deg);
+  -o-transform: rotateX(-360deg);
+  transform: rotateX(-360deg);
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="./images/logo.jpg" type="image/x-icon">
+    <title>云农</title>
+    <link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            color: 
+        }
+        li{
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <!-- Logo -->
+        <div class="header-item1">
+            <div class="logo-item">
+                <a href="./index.html"><img src="./images/logo1.png" alt="" class="img-responsive" style="height: 100%;"></a>
+            </div>
+        </div>
+        <div class="header-item2">
+            <ul class="top-nav1">
+                <li><a data-toggle="tab" href="#home">首页</a></li>
+                <li><a data-toggle="tab" href="#menu1">农业</a></li>
+                <li><a data-toggle="tab" href="#menu3" class="service">服务</a>
+                    <ul class="second-menu1">
+                        <li><a href="#">售后服务政策</a></li>
+                        <li><a href="#">免费保修政策</a></li>
+                        <li><a href="#">退换货政策</a></li>
+                    </ul>
+                </li>
+                <li><a data-toggle="tab" href="#menu5">商城</a></li>
+                <li><a data-toggle="tab" href="#menu4">活动</a></li>
+                <li><a data-toggle="tab" href="#menu5">关于</a>
+                    <ul class="second-menu2">
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">加入云农</a></li>
+                        <li><a href="#">新闻资讯</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="header-item3">
+            <div class="header-item3-search">
+                <form class="bs-example bs-example-form" role="form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" maxlength="100">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                    </div>
+                </form>
+            </div>
+            <div class="header-item3-user">
+                <ul class="top-nav2">
+                    <li>
+                        <a href=""><span class="glyphicon glyphicon-user" style="font-size: 20px;"></span></a>
+                        <ul>
+                            <li><a href="./html/login.html">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- container -->
+    <div class="container" style="width: 100%;margin: 0;padding: 0;">
+        <div class="tab-content" style="position: absolute;margin-top: 0px;">
+            <div id="home" class="tab-pane fade in active" style="height: 700px;">
+                <div id="myCarousel" class="carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1" style="margin-left: 10px;"></li>
+                        <li data-target="#myCarousel" data-slide-to="2" style="margin-left: 10px;"></li>
+                        <li data-target="#myCarousel" data-slide-to="3" style="margin-left: 10px;"></li>
+                        <li data-target="#myCarousel" data-slide-to="4" style="margin-left: 10px;"></li>
+                    </ol>   
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <a href="#">
+                                <img src="./images/shuffling_1.jpg" alt="First slide" style="height: 700px;">
+                                <div class="carousel-text" style="transition: 1s;">
+                                    <h3 class="carousel-text-h3">无人驾驶飞机简称“无人机”</h3>
+                                    <span>无线电遥控设备和自备的程序</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="./images/shuffling_2.jpg" alt="Second slide" style="height: 700px;"><div class="carousel-text" style="transition: 1s;">
+                                    <h3>无人驾驶飞机简称“无人机”</h3>
+                                    <span>无线电遥控设备和自备的程序</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="./images/shuffling_3.jpg" alt="Third slide" style="height: 700px;">
+                                <div class="carousel-text" style="transition: 1s;">
+                                    <h3>无人驾驶飞机简称“无人机”</h3>
+                                    <span>无线电遥控设备和自备的程序</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="./images/shuffling_4.jpg" alt="Fourth slide" style="height: 700px;">
+                                <div class="carousel-text" style="transition: 1s;">
+                                    <h3>无人驾驶飞机简称“无人机”</h3>
+                                    <span>无线电遥控设备和自备的程序</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="./images/shuffling_5.jpg" alt="Fifth slide" style="height: 700px;">
+                                <div class="carousel-text" style="transition: 1s;">
+                                    <h3>无人驾驶飞机简称“无人机”</h3>
+                                    <span>无线电遥控设备和自备的程序</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="left carousel-control pull-left prev" href="#myCarousel" role="button" data-slide="prev" style="width: 5%;">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control pull-right" href="#myCarousel" role="button" data-slide="next" style="width: 5%;">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size: 30px;"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div> 
+            </div>
+            <div id="menu1" class="tab-pane fade">
+              <h3>菜单 1</h3>
+              <p>这是菜单 1 显示的内容。这是菜单 1 显示的内容。这是菜单 1 显示的内容。</p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+              <h3>菜单 2</h3>
+              <p>这是菜单 2 显示的内容。这是菜单 2 显示的内容。这是菜单 2 显示的内容。</p>
+            </div>
+            <div id="menu3" class="tab-pane fade">
+              <h3>菜单 3</h3>
+              <p>这是菜单 3 显示的内容。这是菜单 3 显示的内容。这是菜单 3 显示的内容。</p>
+            </div>
+            <div id="menu4" class="tab-pane fade">
+              <h3>菜单 4</h3>
+              <p>这是菜单 4 显示的内容。这是菜单 4 显示的内容。这是菜单 4 显示的内容。</p>
+            </div>
+            <div id="menu5" class="tab-pane fade">
+              <h3>菜单 5</h3>
+              <p>这是菜单 5 显示的内容。这是菜单 5 显示的内容。这是菜单 5 显示的内容。</p>
+            </div>
+        </div>
+        <div class="show-section1">
+            <div class="grid-item">
+                <div class="grid-item-img">
+                    <a href="#">
+                        <img src="./images/1.png" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-text">
+                    <div class="grid-item-text-info">
+                        <label style="font-size: 24px;font-weight: 400;color: #242424;">智能巡航无人机</label><br>
+                        <span style="font-size: 18px;line-height: 24px;color: #666;">一个专注于科研的团队开发</span>
+
+                    </div>
+                    <div class="grid-item-text-button">
+                        <a href="#">
+                            <label>查看详情</label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-section2">
+            <div class="grid-item">
+                <div class="grid-item-img">
+                    <a href="#">
+                        <img src="./images/2.png" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-text">
+                    <div class="grid-item-text-info">
+                        <label style="font-size: 24px;font-weight: 400;color: #242424;">智能巡航无人机</label><br>
+                        <span style="font-size: 18px;line-height: 24px;color: #666;">一个专注于科研的团队开发</span>
+
+                    </div>
+                    <div class="grid-item-text-button">
+                        <a href="#">
+                            <label>查看详情</label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-section2">
+            <div class="grid-item">
+                <div class="grid-item-img">
+                    <a href="./html/displayData.html">
+                        <img src="./images/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-text">
+                    <div class="grid-item-text-info">
+                        <label style="font-size: 24px;font-weight: 400;color: #242424;">实时数据展示</label><br>
+                        <span style="font-size: 18px;line-height: 24px;color: #666;">一个专注于科研的团队开发</span>
+                    </div>
+                    <div class="grid-item-text-button">
+                        <a href="./html/displayData.html">
+                            <label>查看详情</label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-section2">
+            <div class="grid-item">
+                <div class="grid-item-img">
+                    <a href="">
+                        <img src="./images/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-text">
+                    <div class="grid-item-text-info">
+                        <label style="font-size: 24px;font-weight: 400;color: #242424;">宣传视频</label><br>
+                        <span style="font-size: 18px;line-height: 24px;color: #666;">一个专注于科研的团队开发</span>
+                    </div>
+                    <div class="grid-item-text-button">
+                        <a href="">
+                            <label>查看详情</label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-item">
+            <ul>
+                <li class="buy-channel">
+                    <a href="#">
+                        <label class="service-item-info">
+                            <h4>购买渠道</h4>
+                            <p>查找可靠地购买渠道</p>
+                        </label>
+                    </a>
+                </li>
+                <li class="service-support">
+                    <a href="#">
+                        <label class="service-item-info">
+                            <h4>服务与支持</h4>
+                            <p>很高兴为您提供帮助</p>
+                        </label>
+                    </a>
+                </li>
+                <li class="safe-flight">
+                    <a href="#">
+                        <label class="service-item-info">
+                            <h4>安全飞行</h4>
+                            <p>了解最新安全及禁飞信息</p>
+                        </label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer-left">
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a href="#">关于云农</a></dd>
+                <dd><a href="#">联系云农</a></dd>
+            </dl>
+            <dl>
+                <dt>售后服务</dt>
+                <dd><a href="#">售后服务政策</a></dd>
+                <dd><a href="#">免费保修服务</a></dd>
+                <dd><a href="#">退换货政策</a></dd>
+            </dl>
+            <dl>
+                <dt>新闻</dt>
+                <dd><a href="#">新闻中心</a></dd>
+            </dl>
+            <dl>
+                <dt>商城</dt>
+                <dd><a href="#">云农商城</a></dd>
+            </dl>
+        </div>
+        <div class="footer-right">
+            <div>
+                <img src="./images/erwei.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>

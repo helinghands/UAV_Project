@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/adminIndex.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/adminIndex.js"></script>
+</head>
+<body>
+	<div class="container-box">
+		<div class="conatiner-meu">
+			<ul class="conatiner-meu-ul" id="menu">
+				<li class="selected" onclick="showHidden1()"><a href="#home"  data-toggle="tab" ><div>无人机库</div></a></li>
+				<li><a href="#menu1" onclick="showHidden2()"><div>数据管理</div></a></li>
+				<li><a href="#menu2" onclick="showHidden3()"><div>信息中心</div></a></li>
+			</ul>
+			<script>
+				function showHidden1(){
+					$("#home").css({
+						display: 'block'
+					});
+					$("#menu1").css({
+						display: 'none'
+					});
+					$("#menu2").css({
+						display: 'none'
+					});
+				}
+				function showHidden2(){
+					$("#home").css({
+						display: 'none'
+					});
+					$("#menu1").css({
+						display: 'block'
+					});
+					$("#menu2").css({
+						display: 'none'
+					});
+				}
+				function showHidden3(){
+					$("#home").css({
+						display: 'none'
+					});
+					$("#menu1").css({
+						display: 'none'
+					});
+					$("#menu2").css({
+						display: 'block'
+					});
+				}
+			</script>
+		</div>
+		<div class="container-item1">
+			<div class="container-item1-header">
+				<span>飞行器管理平台</span>
+			</div>
+			<div class="container-item1-content">
+				<div id="home" style="position: absolute;top: 0;left: 0;display: block;">
+					<div class="airplane-item">
+						<div class="airplane-running-state">
+							<span>等待中</span>
+						</div>
+						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div class="front">
+									<img src="../images/airplan1.jpg" alt="">
+								</div>
+								<div class="back">
+									<ul>
+										<li><div class="left back-item">编号:</div><div class="right">C216</div></li>
+										<li><div class="left back-item">型号:</div><div class="right">六轴无人机</div></li>
+										<li><div class="left">预计导航:</div><div class="right">0</div></li>
+										<li><div class="left">工作时间:</div><div class="right"><span></span>min</div></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="airplane-name">
+							<span>御 Mavic Pro</span>
+						</div>
+					</div>
+					<div class="airplane-item">
+						<div class="airplane-running-state">
+							<span>进行中</span>
+						</div>
+						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div class="front">
+									<img src="../images/b1.jpg" alt="">
+								</div>
+								<div class="back">
+									<ul>
+										<li><div class="left back-item">编号:</div><div class="right">C216</div></li>
+										<li><div class="left back-item">型号:</div><div class="right">六轴无人机</div></li>
+										<li><div class="left">预计导航:</div><div class="right">0</div></li>
+										<li><div class="left">工作时间:</div><div class="right"><span></span>min</div></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="airplane-name">
+							<span>C216</span>
+						</div>
+					</div>
+				</div>
+				<div id="menu1" style="position: absolute;top: 0;left: 0;display:none;">
+		        	<div class="airplane-data-item">
+		        		<ul class="data-item-header">
+		        			<li style="width: 10%">编号</li>
+		        			<li style="width: 10%">浇灌主题</li>
+		        			<li style="width: 25%">日期</li>
+		        			<li style="width: 20%">灌溉面积</li>
+		        			<li style="width: 25%">灌溉地点</li>
+		        			<li style="width: 10%">查看详情</li>
+		        		</ul>
+		        		<ul class="data-item-data">
+		        			<li style="width: 10%">1</li>
+		        			<li style="width: 10%">农药喷洒</li>
+		        			<li style="width: 25%">2018-7-30</li>
+		        			<li style="width: 20%">3亩</li>
+		        			<li style="width: 25%">(104.202216,30.662779)</li>
+		        			<li style="width: 10%"><a href="#"><button class="view-details">查看详情</button></a></li>
+		        			<li style="width: 10%">2</li>
+		        			<li style="width: 10%">农药喷洒</li>
+		        			<li style="width: 25%">2018-7-31</li>
+		        			<li style="width: 20%">3亩</li>
+		        			<li style="width: 25%">(104.202216,30.662779)</li>
+		        			<li style="width: 10%"><a href="#"><button class="view-details">查看详情</button></a></li>
+		        			<li style="width: 10%">3</li>
+		        			<li style="width: 10%">农药喷洒</li>
+		        			<li style="width: 25%">2018-7-31</li>
+		        			<li style="width: 20%">3亩</li>
+		        			<li style="width: 25%">(104.202216,30.662779)</li>
+		        			<li style="width: 10%"><a href="#"><button class="view-details">查看详情</button></a></li>
+		        		</ul>
+		        	</div>
+	        	</div>
+	        	<div id="menu2" style="position: absolute;top: 0;left: 0;display: none;">
+	              <div class="airplane-data-item1">
+		        		<ul class="data-item1-header">
+		        			<li style="width: 10%">编号</li>
+		        			<li style="width: 10%">型号</li>
+		        			<li style="width: 25%">名称</li>
+		        			<li style="width: 20%">状态</li>
+		        			<li style="width: 25%">用户</li>
+		        			<li style="width: 10%">管理无人机</li>
+		        		</ul>
+		        		<ul class="data-item1-data">
+		        			<li style="width: 10%">C216</li>
+		        			<li style="width: 10%">六轴无人机</li>
+		        			<li style="width: 25%">云农</li>
+		        			<li style="width: 20%">进行中</li>
+		        			<li style="width: 25%">C216</li>
+		        			<li style="width: 10%"><a href="../html/aircraftManagement.html"><button class="view-details" target="_blank">进入管理</button></a></li>
+		        		</ul>
+		        	</div>
+	            </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

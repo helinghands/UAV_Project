@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/instrumentConfiguration.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/echarts.js"></script>
+</head>
+
+<body>
+    <div class="container-box">
+        <div class="header">
+            <i class="glyphicon glyphicon-asterisk" style="margin-right: 10px;"></i>>&nbsp;&nbsp;检测中心&nbsp;&nbsp;>&nbsp;&nbsp;仪器配置管理
+        </div>
+        <div class="container-item">
+            <div class="container-item-header">
+                <div>
+                    <i class="fa fa-wrench" aria-hidden="true" style="margin-right: 10px;"></i><span>传感器管理</span>
+                </div>
+            </div>
+            <div class="inner1">
+                <div class="inner1-1">
+                    <div id="chart1" style="width: 400px;height: 270px;"></div>
+                </div>
+                <script>
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart = echarts.init(document.getElementById('chart1'));
+                    // 指定图表的配置项和数据
+                    var option = {
+                        title: {
+                            text: '温度传感器(摄氏度)'
+                        },
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: []
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [{
+                            data: [],
+                            type: 'line',
+                            smooth: true,
+                            itemStyle : {
+                                normal : {
+                                    color:'#FFFFF',
+                                    lineStyle:{
+                                        color:'#FD0808'
+                                    }
+                                }
+                            }
+                        }]
+                    };
+                    setInterval(function(){
+                        // 获取当前时间
+                        var date = new Date();
+                        var time;
+                        var hour,minute,second;
+                        // 判断时间的时分秒
+                        if(date.getHours()<10){
+                            hour = "0" + date.getHours();
+                        }else{
+                            hour = date.getHours();
+                        }
+                        if(date.getMinutes()<10){
+                            minute = "0" + date.getMinutes();
+                        }else{
+                            minute = date.getMinutes();
+                        }
+                        if(date.getSeconds()<10){
+                            second = "0" + date.getSeconds();
+                        }else{
+                            second = date.getSeconds();
+                        }
+                        time = hour + ":" + minute + ":" + second;
+                        if(option.xAxis.data.length<5 && option.series[0].data.length<5){
+                            // 填充最后一个元素
+                            option.xAxis.data.push(time);
+                            option.series[0].data.push(Math.random()*10+30);
+                        }else{
+                            // 删除data第一个元素
+                            option.xAxis.data.shift();
+                            option.series[0].data.shift();
+                            // 填充最后一个元素
+                            option.xAxis.data.push(time);
+                            option.series[0].data.push(Math.random()*10+30);
+                        }
+                        
+                        myChart.setOption(option);
+                    },1000);
+                    // 使用刚指定的配置项和数据显示图表。
+                </script>
+                <div class="inner1-2"><span>温度传感器</span></div>
+            </div>
+            <div class="inner2">
+                <div class="inner2-1">
+                    <div id="chart2" style="width: 400px;height: 270px;"></div>
+                    <script>
+                        var myChart1 = echarts.init(document.getElementById('chart2'));
+                        var option1 = {
+                            title: {
+                                text: '湿度传感器(%)'
+                            },
+                            tooltip: {
+                                trigger: 'axis'
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: []
+                            },
+                            yAxis: {
+                                type: 'value'
+                            },
+                            series: [{
+                                data: [],
+                                type: 'line',
+                                smooth: true,
+                                itemStyle : {
+                                    normal : {
+                                        color:'#FFFFF',
+                                        lineStyle:{
+                                            color:'#0C0CF2'
+                                        }
+                                    }
+                                }
+                            }]
+                        };
+                        setInterval(function(){
+                            // 获取当前时间
+                            var date = new Date();
+                            var time;
+                            var hour,minute,second;
+                            // 判断时间的时分秒
+                            if(date.getHours()<10){
+                                hour = "0" + date.getHours();
+                            }else{
+                                hour = date.getHours();
+                            }
+                            if(date.getMinutes()<10){
+                                minute = "0" + date.getMinutes();
+                            }else{
+                                minute = date.getMinutes();
+                            }
+                            if(date.getSeconds()<10){
+                                second = "0" + date.getSeconds();
+                            }else{
+                                second = date.getSeconds();
+                            }
+                            time = hour + ":" + minute + ":" + second;
+                            if(option1.xAxis.data.length<5 && option1.series[0].data.length<5){
+                                // 填充最后一个元素
+                                option1.xAxis.data.push(time);
+                                option1.series[0].data.push(Math.random()*5+80);
+                            }else{
+                                // 删除data第一个元素
+                                option1.xAxis.data.shift();
+                                option1.series[0].data.shift();
+                                // 填充最后一个元素
+                                option1.xAxis.data.push(time);
+                                option1.series[0].data.push(Math.random()*5+80);
+                            }
+                            
+                            myChart1.setOption(option1);
+                        },1000);
+                    </script>
+                </div>
+                <div class="inner2-2"><span>湿度传感器</span></div>
+            </div>
+            <div class="inner3">
+                <div class="inner3-1" id="chart3" style="width: 400px;height: 270px;">
+                    <script>
+                        var myChart2 = echarts.init(document.getElementById('chart3'));
+                        var option2 = {
+                            title: {
+                                text: '风速传感器(m/s)'
+                            },
+                            tooltip: {
+                                trigger: 'axis'
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: []
+                            },
+                            yAxis: {
+                                type: 'value'
+                            },
+                            series: [{
+                                data: [],
+                                type: 'line',
+                                smooth: true,
+                                itemStyle : {
+                                    normal : {
+                                        color:'#FFFFFF',
+                                        lineStyle:{
+                                            color:'#FFFFFF'
+                                        }
+                                    }
+                                }
+                            }]
+                        };
+                        setInterval(function(){
+                            // 获取当前时间
+                            var date = new Date();
+                            var time;
+                            var hour,minute,second;
+                            // 判断时间的时分秒
+                            if(date.getHours()<10){
+                                hour = "0" + date.getHours();
+                            }else{
+                                hour = date.getHours();
+                            }
+                            if(date.getMinutes()<10){
+                                minute = "0" + date.getMinutes();
+                            }else{
+                                minute = date.getMinutes();
+                            }
+                            if(date.getSeconds()<10){
+                                second = "0" + date.getSeconds();
+                            }else{
+                                second = date.getSeconds();
+                            }
+                            time = hour + ":" + minute + ":" + second;
+                            if(option2.xAxis.data.length<5 && option2.series[0].data.length<5){
+                                // 填充最后一个元素
+                                option2.xAxis.data.push(time);
+                                option2.series[0].data.push(Math.random()*0.5+1.5);
+                            }else{
+                                // 删除data第一个元素
+                                option2.xAxis.data.shift();
+                                option2.series[0].data.shift();
+                                // 填充最后一个元素
+                                option2.xAxis.data.push(time);
+                                option2.series[0].data.push(Math.random()*0.5+1.5);
+                            }
+                            
+                            myChart2.setOption(option2);
+                        },1000);
+                    </script>
+                </div>
+                <div class="inner3-2"><span>风速传感器</span></div>
+            </div>
+            <div class="inner4">
+                <div class="inner4-1" id="chart4" style="width: 400px;height: 270px;"></div>
+                <script>
+                        var myChart3 = echarts.init(document.getElementById('chart4'));
+                        var option3 = {
+                            title: {
+                                text: '液位传感器(%)'
+                            },
+                            tooltip: {
+                                trigger: 'axis'
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: []
+                            },
+                            yAxis: {
+                                type: 'value'
+                            },
+                            series: [{
+                                data: [],
+                                type: 'line',
+                                smooth: true,
+                                itemStyle : {
+                                    normal : {
+                                        color:'#FFFFFF',
+                                        lineStyle:{
+                                            color:'#16FAEA'
+                                        }
+                                    }
+                                }
+                            }]
+                        };
+                        setInterval(function(){
+                            // 获取当前时间
+                            var date = new Date();
+                            var time;
+                            var hour,minute,second;
+                            // 判断时间的时分秒
+                            if(date.getHours()<10){
+                                hour = "0" + date.getHours();
+                            }else{
+                                hour = date.getHours();
+                            }
+                            if(date.getMinutes()<10){
+                                minute = "0" + date.getMinutes();
+                            }else{
+                                minute = date.getMinutes();
+                            }
+                            if(date.getSeconds()<10){
+                                second = "0" + date.getSeconds();
+                            }else{
+                                second = date.getSeconds();
+                            }
+                            time = hour + ":" + minute + ":" + second;
+                            var i = 0.4;
+                            if(option3.xAxis.data.length<5 && option3.series[0].data.length<5){
+                                // 填充最后一个元素
+                                option3.xAxis.data.push(time);
+                                option3.series[0].data.push(73-i);
+                                i = i + 0.4;
+                            }else{
+                                // 删除data第一个元素
+                                option3.xAxis.data.shift();
+                                option3.series[0].data.shift();
+                                // 填充最后一个元素
+                                option3.xAxis.data.push(time);
+                                option3.series[0].data.push(73-i);
+                                i = i + 0.4;
+                            }
+                            
+                            myChart3.setOption(option3);
+                        },1000);
+                    </script>
+                <div class="inner4-2"><span>液位传感器</span></div>
+            </div>
+            <div class="inner5">
+                <div class="inner5-1" id="chart5" style="width: 400px;height: 270px;"></div>
+                <script>
+                        var myChart4 = echarts.init(document.getElementById('chart5'));
+                        var option4 = {
+                            title: {
+                                text: '光照传感器(Lux)'
+                            },
+                            tooltip: {
+                                trigger: 'axis'
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: []
+                            },
+                            yAxis: {
+                                type: 'value'
+                            },
+                            series: [{
+                                data: [],
+                                type: 'line',
+                                smooth: true,
+                                itemStyle : {
+                                    normal : {
+                                        color:'#FFFFFF',
+                                        lineStyle:{
+                                            color:'#2DF911'
+                                        }
+                                    }
+                                }
+                            }]
+                        };
+                        setInterval(function(){
+                            // 获取当前时间
+                            var date = new Date();
+                            var time;
+                            var hour,minute,second;
+                            // 判断时间的时分秒
+                            if(date.getHours()<10){
+                                hour = "0" + date.getHours();
+                            }else{
+                                hour = date.getHours();
+                            }
+                            if(date.getMinutes()<10){
+                                minute = "0" + date.getMinutes();
+                            }else{
+                                minute = date.getMinutes();
+                            }
+                            if(date.getSeconds()<10){
+                                second = "0" + date.getSeconds();
+                            }else{
+                                second = date.getSeconds();
+                            }
+                            time = hour + ":" + minute + ":" + second;
+                            if(option4.xAxis.data.length<5 && option4.series[0].data.length<5){
+                                // 填充最后一个元素
+                                option4.xAxis.data.push(time);
+                                option4.series[0].data.push(Math.random()*50+400);
+                            }else{
+                                // 删除data第一个元素
+                                option4.xAxis.data.shift();
+                                option4.series[0].data.shift();
+                                // 填充最后一个元素
+                                option4.xAxis.data.push(time);
+                                option4.series[0].data.push(Math.random()*50+400);
+                            }
+                            
+                            myChart4.setOption(option4);
+                        },1000);
+                    </script>
+                <div class="inner5-2"><span>光照传感器</span></div>
+            </div>
+            <div class="inner6">
+                <div class="inner6-1" id="chart6" style="width: 400px;height: 270px;"></div>
+                <script>
+                    var myChart5 = echarts.init(document.getElementById('chart6'));
+                    var option5 = {
+                        title: {
+                            text: '光照传感器(Lux)'
+                        },
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: []
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [{
+                            data: [],
+                            type: 'line',
+                            smooth: true,
+                            itemStyle : {
+                                normal : {
+                                    color:'#FFFFFF',
+                                    lineStyle:{
+                                        color:'#F48115'
+                                    }
+                                }
+                            }
+                        }]
+                    };
+                    setInterval(function(){
+                        // 获取当前时间
+                        var date = new Date();
+                        var time;
+                        var hour,minute,second;
+                        // 判断时间的时分秒
+                        if(date.getHours()<10){
+                            hour = "0" + date.getHours();
+                        }else{
+                            hour = date.getHours();
+                        }
+                        if(date.getMinutes()<10){
+                            minute = "0" + date.getMinutes();
+                        }else{
+                            minute = date.getMinutes();
+                        }
+                        if(date.getSeconds()<10){
+                            second = "0" + date.getSeconds();
+                        }else{
+                            second = date.getSeconds();
+                        }
+                        time = hour + ":" + minute + ":" + second;
+                        if(option5.xAxis.data.length<5 && option5.series[0].data.length<5){
+                            // 填充最后一个元素
+                            option5.xAxis.data.push(time);
+                            option5.series[0].data.push(Math.random()*0.5+3.0);
+                        }else{
+                            // 删除data第一个元素
+                            option5.xAxis.data.shift();
+                            option5.series[0].data.shift();
+                            // 填充最后一个元素
+                            option5.xAxis.data.push(time);
+                            option5.series[0].data.push(Math.random()*0.5+3.0);
+                        }
+                        
+                        myChart5.setOption(option5);
+                    },1000);
+                </script>
+                <div class="inner6-2"><span>电流传感器</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

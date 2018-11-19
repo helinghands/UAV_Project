@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/operationCenter.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=G9tZQOjaCWkjGGbI9RvAGpUqOlbONf4v"></script>
+    <script src="../js/operationCenter.js"></script>
+</head>
+<body>
+	<div class="container-box">
+		<div class="container-item1">
+			<div class="map-title">
+				<i class="glyphicon glyphicon-asterisk" style="margin-right: 10px;"></i>>&nbsp;&nbsp;<span class="span1">状态管理&nbsp;&nbsp;>&nbsp;&nbsp;飞机运行信息</span>
+			</div>
+			<!-- 显示地图 -->
+			<div class="map-img" id="mapShow">
+				
+			</div>
+			<script>
+				var map = new BMap.Map("mapShow",{mapType:BMAP_HYBRID_MAP});
+                var point = new BMap.Point(104.201089,30.661886);
+                map.centerAndZoom(point, 19);
+                var top_left_navigation = new BMap.NavigationControl();
+                map.addControl(top_left_navigation);
+                var marker = new BMap.Marker(new BMap.Point(104.201089,30.661886)); // 创建点
+                map.addOverlay(marker);            //增加点
+                var sContent = "所在位置定位";
+                var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+				map.openInfoWindow(infoWindow,point); //开启信息窗口
+			</script>
+		</div>
+		<div class="container-item2">
+			<div class="local-weather">
+				<div class="local-weather-header">
+					<i class="fa fa-cloud icon1" aria-hidden="true"></i><span>天气预测</span>
+				</div>
+				<div class="weather-info">
+					<div class="weather-info-item1">
+						<div class="weather-info-date">
+							<span class="date">
+								周二<br>7月31日
+							</span>
+						</div>
+						<div class="weather-info-img">
+							<img src="" alt="多云icon" class="weatherImg">
+						</div>
+						<div class="weather-info-temperature">
+							<span>
+								<span class="temperature"></span>
+							</span>
+						</div>
+						<div class="weather-info-situation">
+							<div class="weather-info-situation-item">
+								<span class="weather"></span>
+							</div>
+							<div class="weather-info-situation-item">
+								<span class="temperatureRange"></span>
+							</div>
+							<div class="weather-info-situation-item">
+								<span class="wind"></span>
+							</div>
+						</div>
+					</div>
+					<div class="weather-info-item2">
+						<div class="weather-info-item2-date">
+							<span class="date">周三<br>8月01日</span>
+						</div>
+						<div class="weather-info-item2-img">
+							<img src="" alt="小雨icon" class="weatherImg">
+						</div>
+						<div class="weather-info-item2-temperature">
+							<span>
+								<span class="temperature"></span>
+							</span>
+						</div>
+						<div class="weather-info-item2-situation">
+							<div class="weather-info-item2-situation-item">
+								<span class="weather"></span>
+							</div>
+							<div class="weather-info-item2-situation-item">
+								<span class="temperatureRange"></span>
+							</div>
+							<div class="weather-info-item2-situation-item">
+								<span class="wind"></span>
+							</div>
+						</div>
+					</div>
+					<script>
+						
+					</script>
+					<div class="weather-info-item2">
+						<div class="weather-info-item2-date">
+							<span class="date">周四<br>8月02日</span>
+						</div>
+						<div class="weather-info-item2-img">
+							<img src="" alt="小雨icon" class="weatherImg">
+						</div>
+						<div class="weather-info-item2-temperature">
+							<span>
+								<span class="temperature"></span>
+							</span>
+						</div>
+						<div class="weather-info-item2-situation">
+							<div class="weather-info-item2-situation-item">
+								<span class="weather"></span>
+							</div>
+							<div class="weather-info-item2-situation-item">
+								<span class="temperatureRange"></span>
+							</div>
+							<div class="weather-info-item2-situation-item">
+								<span class="wind"></span>
+							</div>
+						</div>
+					</div>
+					<div class="weather-info-item2">
+						<div class="weather-info-item2-date">
+							<span class="date">周五<br>8月03日</span>
+						</div>
+						<div class="weather-info-item2-img">
+							<img src="" alt="小雨icon" class="weatherImg">
+						</div>
+						<div class="weather-info-item2-temperature">
+							<span>
+								<span class="temperature"></span>
+							</span>
+						</div>
+						<div class="weather-info-item2-situation">
+							<div class="weather-info-item2-situation-item">
+								<span class="weather"></span>
+							</div>
+							<div class="weather-info-item2-situation-item">
+								<span class="temperatureRange"></span>
+							</div>
+							<div class="weather-info-item2-situation-item">
+								<span class="wind"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					var Udate = new Date();
+					var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+					//$("#date1").html(weekday[Udate.getDay()]+"<br>"+(Udate.getMonth()+1)+"月"+Udate.getDate()+"日");
+					function showWeather(data){
+						var weather = $(".weather");
+						var temperatureRange = $(".temperatureRange");
+						var weatherImg = $(".weatherImg");
+						var temperature = $(".temperature");
+						var date = $(".date");
+						var wind = $(".wind");
+						console.log(data);
+						for(var i=0;i<data.results[0].weather_data.length;i++){
+				        	weather[i].innerHTML = data.results[0].weather_data[i].weather;
+				        	temperatureRange[i].innerHTML = data.results[0].weather_data[i].temperature;
+				        	temperature[i].innerHTML = data.results[0].weather_data[i].temperature.substring(0, 2) + "℃";
+				        	weatherImg[i].src = data.results[0].weather_data[i].dayPictureUrl;
+				        	wind[i].innerHTML = data.results[0].weather_data[i].wind;
+						} 
+				    }
+				</script>
+				<script src="http://api.map.baidu.com/telematics/v3/weather?location=龙泉驿区&output=json&ak=H7W5CxI0BPzKtwGcBHmpGPAz50xP1Qjw&callback=showWeather"></script>
+			</div>
+			<div class="route-planning">
+				<div class="route-planning-title">
+					<i class="fa fa-bars icon1" aria-hidden="true"></i><span>航程规划</span>
+				</div>
+				<div class="route-planning-content">
+					<div class="caption">
+						<div><span>工作类型</span></div>
+						<div><span>开始时间</span></div>
+						<div><span>结束时间</span></div>
+						<div><span>灌溉面积</span></div>
+					</div>
+					<div class="route-planning-info">
+						<ul>
+							<script>
+								for(var i=0;i<5;i++){
+									var day = Math.floor(Math.random()*5 + 20);
+									var dayHour = Math.floor(Math.random()*11 + 5);
+									var dayMinute = Math.floor(Math.random()*5 + 50);
+									var daySecond = Math.floor(Math.random()*10 + 40);
+									var dayMinute1 = dayMinute + 4;
+									var daySecond1 = daySecond + 7;
+									dayHour1 = dayHour + 3;
+									if(dayHour<10){
+										dayHour = "0" + dayHour;
+									}
+									if(dayHour1<10){
+										dayHour1 = "0" + dayHour1;
+									}
+									if(dayMinute<10){
+										dayMinute = "0" + dayMinute;
+									}
+									if(dayMinute1<10){
+										dayMinute1 = "0" + dayMinute1;
+									}
+									if(daySecond<10){
+										daySecond = "0" + daySecond;
+									}
+									if(daySecond1<10){
+										daySecond1 = "0" + daySecond1;
+									}
+									if(i%2 == 0){
+										$(".route-planning-info ul").append('<li><div><div class="item-btn">农药喷洒</div></div><div><span>2018-7-' + day + '<br />' + dayHour +':' + dayMinute + ':' + daySecond +'</span></div><div><span>2018-7-' + day + '<br />' + dayHour1 + ':' + dayMinute1 + ':' + daySecond1 + '</span></div><div class="item">' + Math.floor(Math.random()*5 + 1) + '亩</div></li>');
+									}else{
+										$(".route-planning-info ul").append('<li><div><div class="item-btn">农业灌溉</div></div><div><span>2018-7-' + day + '<br />' + dayHour +':' + dayMinute + ':' + daySecond +'</span></div><div><span>2018-7-' + day + '<br />' + dayHour1 + ':' + dayMinute1 + ':' + daySecond1 + '</span></div><div class="item">' + Math.floor(Math.random()*5 + 1) + '亩</div></li>');
+									}
+								}
+							</script>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-item3">
+			<div class="data-statistics-header">
+				 <i class="fa fa-database icon1" aria-hidden="true"></i><span>数据统计</span>
+			</div>
+			<div class="data-statistics-menu">
+				<div>
+					<div id="height">
+						<a href="../html/flightAltitude.html" target="display-data">
+							<button class="height-btn"><i class="fa fa-h-square" aria-hidden="true" style="margin-right: 5px;"></i>高度</button>
+						</a>
+					</div>
+					<div>
+						<a href="../html/flightSpeed.html" target="display-data"><button class="height-btn"><i class="fa fa-tachometer" aria-hidden="true" style="margin-right: 5px;"></i>航速</button>
+						</a>
+					</div>
+					<div>
+						<a href="../html/flightTemperature.html" target="display-data"><button class="height-btn"><i class="fa fa-thermometer-half" aria-hidden="true" style="margin-right: 5px;"></i>温度</button>
+						</a>
+					</div>
+					<div>
+						<a href="../html/pesticideConcentration.html" target="display-data"><button class="height-btn"><i class="fa fa-arrows-v" aria-hidden="true" style="margin-right: 5px;"></i>药箱液位</button>
+						</a>
+					</div>
+					<div>
+						<a href="../html/flightWarning.html" target="display-data"><button class="height-btn"><i class="fa fa-exclamation-triangle" aria-hidden="true" style="margin-right: 5px;"></i>报警</button></a>
+					</div>
+					<div>
+						<a href="../html/flightWeather.html" target="display-data"><button class="height-btn"><i class="fa fa-cloud" aria-hidden="true" style="margin-right: 5px;"></i>天气检测</button></a>
+					</div>
+				</div>
+			</div>
+			<div class="data-statistics-data">
+				<iframe src="../html/flightAltitude.html" frameborder="0" name="display-data" class="display-data" id="display-data"></iframe>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

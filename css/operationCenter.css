@@ -1,0 +1,253 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+.container-box{
+	width: 1000px;
+	height: 1400px;
+	background-color: #F3F3F4;
+}
+.container-item1{
+	width: 1000px;
+	height: 380px;
+}
+.map-title{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 25px;
+	color: #888;
+	border-bottom: 1px solid lightgray;
+}
+.map-img{
+	width: 1000px;
+	height: 340px;
+	background: #fff;
+}
+.container-item2{
+	width: 1000px;
+	height: 400px;
+	margin-top: 20px;
+}
+.container-item2>div{
+	float: left;
+}
+.local-weather,.route-planning{
+	width: 470px;
+	height: 400px;
+	background: #fff;
+	margin-left: 20px;
+}
+.route-planning-title{
+	width: 470px;
+	padding-left: 25px;
+	height: 40px;
+	background-color: #E3E3E3;
+	line-height: 40px;
+	color: #888;
+}
+.icon1{
+	margin-right: 10px;
+}
+.route-planning-content{
+	width: 100%;
+	height: 360px;
+}
+.caption{
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px dashed lightgray;
+}
+.caption>div{
+	float: left;
+	width: 117.5px;
+	height: 30px;
+	margin-top: 5px;
+	text-align: center;
+	line-height: 30px;
+	color: #888;
+}
+.route-planning-info{
+	width: 100%;
+	height: 300px;
+}
+.route-planning-info li{
+	width: 470px;
+	height: 60px;
+	border-bottom: 1px dashed lightgray;
+}
+.route-planning-info li>div{
+	float: left;
+	width: 117.5px;
+	height: 40px;
+	margin-top: 10px;
+	text-align: center;
+	color: #888;
+}
+.item{
+	line-height: 30px;
+}
+.item-btn{
+	width: 80px;
+	height: 30px;
+	margin-left: 18px;
+	line-height: 30px;
+	color: #fff;
+	background: green;
+}
+.container-item3{
+	width: 960px;
+	height: 520px;
+	background: #fff;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.data-statistics-header{
+	width: 960px;
+	height: 30px;
+	background: #EAEAEA;
+	padding-left: 25px;
+	line-height: 30px;
+	color: #888;
+}
+.data-statistics-menu{
+	width: 960px;
+	height: 100px;
+	padding-top: 20px;
+}
+.data-statistics-menu>div{
+	width: 920px;
+	height: 60px;
+	margin-left: 20px;
+	border-bottom: 1px dashed lightgray;
+}
+.data-statistics-menu>div>div{
+	float: left;
+	width: 120px;
+	height: 40px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+button{
+	width: 120px;
+	height: 40px;
+	border: none;
+	background-color: blue;
+	color: #fff;
+	outline: none;
+}
+.data-statistics-data{
+	width: 900px;
+	height: 370px;
+	margin-left: 40px;
+}
+iframe.display-data{
+	width: 900px;
+	height: 370px;
+	background-color: #F6F6F6;
+}
+.container{
+	display: none;
+}
+.local-weather-header{
+	height: 40px;
+	width: 100%;
+	padding-left: 25px;
+	background-color: #E3E3E3;
+	line-height: 40px;
+	color: #888;
+}
+.weather-info{
+	width: 470px;
+	height: 300px;
+	position: relative;
+	color: #888;
+	margin-top: 30px;
+}
+.weather-info>div{
+	float: left;
+}
+.weather-info-item1{
+	width: 110px;
+	height: 300px;
+	margin-left: 18px;
+}
+.weather-info-item2{
+	width: 90px;
+	height: 300px;
+	margin-left: 18px;
+	/* background-color: red; */
+}
+.weather-info-date{
+	width: 110px;
+	height: 60px;
+	line-height: 20px;
+	text-align: center;
+	padding-top: 15px;
+}
+.weather-info-img{
+	width: 110px;
+	height: 110px;
+}
+.weather-info-img>img{
+	width: 100%;
+	height: 100%;
+}
+.weather-info-temperature{
+	width: 110px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #888;
+}
+.weather-info-temperature>span>span{
+	font-size: 24px;
+}
+.weather-info-situation{
+	width: 100%;
+	height: 80px;
+}
+.weather-info-situation-item{
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	color: #888;
+}
+.weather-info-item2-date{
+	width: 90px;
+	height: 80px;
+	line-height: 20px;
+	text-align: center;
+	padding-top: 35px;
+}
+.weather-info-item2-img{
+	width: 90px;
+	height: 90px;
+}
+.weather-info-item2-img>img{
+	width: 100%;
+	height: 100%;
+}
+.weather-info-item2-temperature{
+	width: 90px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #888;
+	font-size: 16px;
+}
+.weather-info-item2-situation{
+	width: 100%;
+	height: 80px;
+}
+.weather-info-item2-situation-item{
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	color: #888;
+}

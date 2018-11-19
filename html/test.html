@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <nav class="test"></nav>
+    <nav class="text"></nav>
+    <script>
+        $(".test").html("天气预报请求中。。。");
+        $.get("http://wthrcdn.etouch.cn/weather_mini?city=成都",function(data){
+        console.log(data);
+        var info = data.data;
+        console.log(info);
+        console.log(info.forecast[0]);
+        var today=info.forecast[0];
+        $(".test").html("天气状况："+today.type+" 温度："+today.low+" "+today.high);
+        },"json");
+        $(".text").html("<img src='" + data.weather_icon1 + "'>");
+    </script>
+</body>
+</html>

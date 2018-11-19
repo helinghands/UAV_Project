@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/cruiseMap.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=G9tZQOjaCWkjGGbI9RvAGpUqOlbONf4v"></script>
+    <script src="../js/baseStation.js"></script>
+    <script src="../js/modernizr.custom.34807.js"></script>
+    <script src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="container-box">
+        <div class="header">
+            <i class="glyphicon glyphicon-asterisk" style="margin-right: 10px;"></i>>&nbsp;&nbsp;状态管理&nbsp;&nbsp;>&nbsp;&nbsp;巡航地图
+        </div>
+        <div class="container-item">
+            <div class="container-item-header">
+                <div>
+                    <i class="fa fa-building" aria-hidden="true" style="margin-right: 10px;"></i><span>航线</span>
+                </div>
+            </div>
+            <div class="route-planning">
+                <div class="route-planning-header">
+                    <span>航线规划</span>
+                </div>
+                <div class="route-planning-map" id="map">
+                    
+                </div>
+                <script>
+                    var map = new BMap.Map("map",{mapType:BMAP_HYBRID_MAP});
+                    var point = new BMap.Point(104.201089,30.661886);
+                    map.centerAndZoom(point, 19);
+                    var top_left_navigation = new BMap.NavigationControl();
+                    map.addControl(top_left_navigation);
+                    // var marker = new BMap.Marker(new BMap.Point(104.201089,30.661886));
+                    // map.addOverlay(marker);
+                    var option = {
+                        option1:[{
+                            x:[],
+                            y:[]
+                        }]
+                    }
+                    map.addEventListener("click",function(e){
+                        var marker1 = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));
+                        map.addOverlay(marker1);
+                        option.option1[0].x.push(e.point.lng);
+                        option.option1[0].y.push(e.point.lat);
+                        for(var i=1;i<option.option1[0].x.length;i++){
+                                var polyline = new BMap.Polyline([
+                                new BMap.Point(option.option1[0].x[i-1], option.option1[0].y[i-1]),
+                                new BMap.Point(option.option1[0].x[i], option.option1[0].y[i])
+                            ], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5});   //创建折线
+                        }
+                        map.addOverlay(polyline);
+                    });
+                    function showDetail(){
+                        for(var i=0;i<option.option1[0].x.length;i++){
+                            $("#table").append($('<tr><td><div class="item1">目标点' + (i+1) + '</div></td><td><div class="item2"><span>(' + option.option1[0].x[i] + ',' + option.option1[0].y[i] + ')</span></div></td><td><div class="item3"></div></td><td><div class="item4"></div></td></tr>'));
+                        }
+                        $("#page").append('第<span>1</span>页&nbsp;&nbsp;共<span>1</span>页&nbsp;&nbsp;<a href="#">首页</a>&nbsp;&nbsp;<a href="#">下一页</a>&nbsp;&nbsp;<a href="#">最后一页</a>&nbsp;&nbsp;<select name="" id=""><option value="1">1</option></select>');
+                        console.log("(" + option.option1[0].x[2] + "," + option.option1[0].y[2] + ")");
+                    }
+                    function openScroll(){
+                        map.enableScrollWheelZoom();
+                    }
+                    function closeScroll(){
+                        map.disableScrollWheelZoom();
+                    }
+                </script>
+                <!-- 航线规划确认按钮 -->
+                <div class="route-planning-btn">
+                    <span>
+                        <button class="btn-item1" onclick="showDetail()">确认航线</button>
+                        <button class="btn-item2" onclick="openScroll()">开启鼠标滚轮缩放地图</button>
+                        <button class="btn-item2" onclick="closeScroll()">关闭鼠标滚轮缩放地图</button>
+                    </span>
+                </div>
+            </div>
+            <div class="route-data-show">
+                <div class="route-data-show-header">
+                    <span>航线数据</span>
+                </div>
+                <div class="route-data-content">
+                    <div class="route-data-content-item1">
+                        <table border="1" id="table">
+                            <tr>
+                                <th><div class="item1 item">序号</div></th>
+                                <th><div class="item2 item">坐标</div></th>
+                                <th><div class="item3 item">距离</div></th>
+                                <th><div class="item4 item">预计到达时间</div></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="route-data-content-item2" id="page">
+                            
+                    </div>
+                </div>
+            </div>
+           <!--  <div class="image-show">
+                <div class="image-show-header">
+                    <i class="fa fa-camera" aria-hidden="true" style="margin-right: 10px;"></i><span>图片</span>
+                </div>
+                <div class="image-show-content">
+                    <div id="portfolio"></div>
+                    <ul id="portfolio-item">
+                        <li><img src="../images/a1.jpg" alt="图片1" /></li>
+                        <li><img src="../images/a2.jpg" alt="图片2" /></li>
+                        <li><img src="../images/a3.jpg" alt="图片3" /></li>
+                        <li><img src="../images/a4.jpg" alt="图片4" /></li>
+                        <li><img src="../images/a5.jpg" alt="图片5" /></li>
+                        <li><img src="../images/a6.jpg" alt="图片6" /></li>
+                        <li><img src="../images/a7.jpg" alt="图片7" /></li>
+                        <li><img src="../images/a8.jpg" alt="图片8" /></li>
+                        <li><img src="../images/a9.jpg" alt="图片9" /></li>
+                        <li><img src="../images/a10.jpg" alt="图片10" /></li>
+                        <li><img src="../images/sun.png" alt="图片" /></li>
+                        <li><img src="../images/sun.png" alt="晴" /></li>
+                        <li><img src="../images/sun.png" alt="晴" /></li>
+                        <li><img src="../images/sun.png" alt="晴" /></li>
+                        <li><img src="../images/sun.png" alt="晴" /></li>
+                        <li><img src="../images/snow.png" alt="雪" /></li>
+                        <li><img src="../images/snow.png" alt="雪" /></li>
+                        <li><img src="../images/snow.png" alt="雪" /></li>
+                        <li><img src="../images/snow.png" alt="雪" /></li>
+                    </ul>
+                    <nav id="navigation">
+                        <a href="#1" class="nav selected" data-page="1">1</a>
+                        <a href="#2" class="nav" data-page="2">2</a>
+                        <a href="#3" class="nav" data-page="3">3</a>
+                        <a href="#4" class="nav" data-page="4">4</a>
+                    </nav>  
+                </div>
+                <script>
+                    if(!Modernizr.csstransforms3d) document.getElementById('information').style.display = 'block'; 
+                </script>
+            </div>
+ -->            <div class="video-show">
+                <div class="video-show-header">
+                    <i class="fa fa-video-camera" aria-hidden="true" style="margin-right: 10px;"></i><span>视频</span>
+                </div>
+                <div class="video-show-content">
+                    <video src="../video/01.mp4" controls="controls" muted="muted"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

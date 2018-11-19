@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="../images/logo.jpg" type="image/x-icon">
+    <title>智能云农</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/aircraftManagement.css">
+    <script src="../jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/aircraftManagement.js"></script>
+</head>
+<body>
+	<div class="container-box">
+        <div class="container-item1" id="container-item1">
+        	<div class="container-item1-item1"></div>
+        	<div class="container-item1-item2">
+        		<div class="header-image">
+        			<img src="../images/1.png" alt="">
+        		</div>
+        	</div>
+        	<div class="container-item1-item3">
+        		<div>
+        			<div><span>编号:</span></div>
+        			<div><span>C216</span></div>
+        		</div>
+        		<div>
+        			<div><span>型号:</span></div>
+        			<div><span>六轴无人机2</span></div>
+        		</div>
+        		<div>
+        			<div><span>设计时间:</span></div>
+        			<div><span>2018-07-24 10:30:25</span></div>
+        		</div>
+        		<div>
+        			<div><span>工作类型:</span></div>
+        			<div><span>农业灌溉</span></div>
+        		</div>
+        	</div>
+        	<div class="container-item1-item4">
+        		<div class="real-time-data">
+        			<div>
+        				<div class="speed">
+        					<nav class="speed-icon"><i class="fa fa-tachometer" aria-hidden="true"></i></nav>
+        					<nav class="speed-data"><span>5.7 m/s</span></nav>
+        				</div>
+        			</div>
+        			<div>
+        				<div class="speed">
+        					<nav class="speed-icon"><i class="fa fa-h-square" aria-hidden="true"></i></nav>
+        					<nav class="speed-data"><span>8.5 m</span></nav>
+        				</div>
+        			</div>
+        			<div>
+        				<div class="speed">
+        					<nav class="speed-icon"><i class="fa fa-thermometer-half" aria-hidden="true"></i></nav>
+        					<nav class="speed-data"><span>32.7 ℃</span></nav>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="real-time-data">
+        			<div>
+        				<div class="speed">
+        					<nav class="speed-icon"><i class="fa fa-battery-half" aria-hidden="true"></i></nav>
+        					<nav class="speed-data"><span>83 %</span></nav>
+        				</div>
+        			</div>
+        			<div>
+        				<div class="speed">
+        					<nav class="speed-icon"><i class="glyphicon glyphicon-map-marker"></i></nav>
+        					<nav class="speed-data"><span>NW 57'50'</span></nav>
+        				</div>
+        			</div>
+        			<div>
+        				<div class="speed">
+        					<nav class="speed-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></nav>
+        					<nav class="speed-data"><span>23.7 min</span></nav>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="pull-right container-item1-item6">
+        		<div class="electric-quantity">
+        			<div class="electric-quantity-btn">
+    					<nav class="state-icon"><i class="fa fa-plane"></i></nav>
+    					<nav class="state-data"><span>Auto</span></nav>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="container-item2" id="container-item2">
+        	<div class="container-item2-left">
+        		<div class="container-item2-left-item1">
+        			<div class="menu-header">
+	        			<div>状态管理</div>
+	        		</div>
+	        		<div class="menu-title">
+	        			<ul>
+	        				<li onclick="change1()">
+	        					<a href="../html/electricityManagement.html" target="display-content">
+	        						<div><i class="fa fa-battery-half icon" aria-hidden="true"></i><span>飞机电量管理</span></div>
+	        					</a>
+	        				</li>
+	        				<li onclick="change2()">
+	        					<a href="../html/operationCenter.html" target="display-content">
+	        						<div><i class="fa fa-signal icon" aria-hidden="true"></i><span>飞机运行信息</span></div>
+	        					</a>
+	        				</li>
+	        				<li onclick="change3()">
+	        					<a href="../html/baseStation.html" target="display-content">
+	        						<div><i class="fa fa-building icon" aria-hidden="true"></i><span>基站管理</span></div>
+	        					</a>
+	        				</li>
+	        			</ul>
+	        		</div>
+        		</div>
+        		<div class="container-item2-left-item2">
+        			<div class="menu-header">
+	        			<div>检测中心</div>
+	        		</div>
+	        		<div class="menu-title">
+	        			<ul>
+	        				<li onclick="change4()">
+	        					<a href="../html/instrumentConfiguration.html" target="display-content">
+	        						<div><i class="fa fa-battery-half icon" aria-hidden="true"></i><span>仪器配置管理</span></div>
+	        					</a>
+	        				</li>
+	        				<li onclick="change5()">
+	        					<a href="../html/cruiseMap.html" target="display-content">
+	        						<div><i class="fa fa-map icon" aria-hidden="true"></i><span>巡航地图</span></div>
+	        					</a>
+	        				</li>
+	        				<li onclick="change6()">
+	        					<a href="../html/dataCollection.html" target="display-content">
+	        						<div><i class="fa fa-database icon" aria-hidden="true"></i><span>数据收集</span></div>
+	        					</a>
+	        				</li>
+	        				<li onclick="change7()">
+	        					<a href="../html/logManagement.html" target="display-content">
+	        						<div><i class="fa fa-file-text icon" aria-hidden="true"></i><span>日志管理</span></div>
+	        					</a>
+	        				</li>
+	        			</ul>
+	        		</div>
+        		</div>
+        	</div>
+        	<div class="container-item2-right right">
+        		<iframe src="../html/electricityManagement.html" frameborder="0" class="iframe1" name="display-content" id="display-content"></iframe>
+                <script>
+                    function change1(){
+                        $(".iframe1").css({
+                            height:800
+                        });
+                        $(".container-item2").css({
+                            height:800
+                        });
+                    }
+                    function change2(){
+                    	$(".iframe1").css({
+                            height:1400
+                        });
+                        $(".container-item2").css({
+                            height:1400
+                        });
+                    }
+                    function change3(){
+                        $(".iframe1").css({
+                            height:800
+                        });
+                        $(".container-item2").css({
+                            height:800
+                        });
+                    }
+                    function change4(){
+                    	$(".iframe1").css({
+                            height:1150
+                        });
+                        $(".container-item2").css({
+                            height:1150
+                        });
+                    }
+                    function change5(){
+                        $(".iframe1").css({
+                            height:1730
+                        });
+                        $(".container-item2").css({
+                            height:1730
+                        });
+                    }
+                    function change6(){
+                        $(".iframe1").css({
+                            height:700
+                        });
+                        $(".container-item2").css({
+                            height:700
+                        });
+                    }
+                    function change7(){
+                         $(".iframe1").css({
+                            height:700
+                        });
+                        $(".container-item2").css({
+                            height:700
+                        });
+                    }
+                </script>
+        	</div>
+        </div>
+        <div class="container-item3">
+            <span>Copyright &copy;2018 云农</span>
+        </div>
+    </div>
+</body>
+</html>
